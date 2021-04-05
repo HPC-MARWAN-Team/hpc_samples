@@ -7,8 +7,7 @@
 #SBATCH -e %x-%j.err
 
 #load gromacs
-module load openmpi/gcc/64/2.1.2
-module load Gromacs/openmpi/gcc/64/2019.3
+module load GROMACS/2019.3-foss-2019b
 
 #prepare working dir 
 export WORK_DIR=/data/$USER/gmx${SLURM_JOB_ID}
