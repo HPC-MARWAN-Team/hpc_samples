@@ -9,7 +9,6 @@
 
 module load LAMMPS/7Aug2019-foss-2019b-Python-3.7.4-kokkos
 
-
 export WORK_DIR=/data/$USER/LMP${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
 
