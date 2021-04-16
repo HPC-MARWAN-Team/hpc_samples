@@ -12,6 +12,10 @@ module load molpro/2010_1
 #prepare working dir
 export WORK_DIR=/data/$USER/${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
+
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR/
 cp $PWD/runmolpro.sh $WORK_DIR/
