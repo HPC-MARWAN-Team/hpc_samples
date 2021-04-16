@@ -16,6 +16,10 @@ source $OPENFOAM_BASH
 
 export WORK_DIR=/data/$USER/OF_${SLURM_JOB_ID}
 export INPUT_DIR=/home/$USER/cavity
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Dossier Input non spécifié "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error: Dossier Input n'existe pas "; exit 1; }
+
 mkdir -p $WORK_DIR
 cp -r $INPUT_DIR/* $WORK_DIR
 cd $WORK_DIR
