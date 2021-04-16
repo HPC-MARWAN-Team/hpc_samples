@@ -10,6 +10,10 @@ source /data/shared/apps2/gamos/gcc/6.0/GAMOS.6.0.0/config/confgamos.sh
 #prepare working dir
 export WORK_DIR=/data/$USER/gamos${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Dossier Input non spécifié "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error: Dossier Input n'existe pas "; exit 1; }
+
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR
 cd $WORK_DIR
