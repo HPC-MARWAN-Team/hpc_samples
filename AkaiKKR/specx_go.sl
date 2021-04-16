@@ -7,6 +7,10 @@
 #prepare work_dir 
 export WORK_DIR=/data/$USER/Akai${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Dossier Input non spécifié "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error: Dossier Input n'existe pas "; exit 1; }
+
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR
 cd $WORK_DIR
