@@ -10,9 +10,13 @@ module load cmake/gcc/64
 
 #prepare working directory
 export WORK_DIR=/data/$USER/root_$SLURM_JOB_ID
-export INPUT_DIR=$PWD/hist/
+export INPUT_DIR=$PWD/hist
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
+
 mkdir -p $WORK_DIR
-cp -r $INPUT_DIR $WORK_DIR
+cp -R $INPUT_DIR/* $WORK_DIR
 
 echo "Running root in $WORK_DIR"
 
