@@ -19,6 +19,10 @@ module load qe/openmpi/gcc/64/6.4.1
 #prepare work dir
 export WORK_DIR=/data/$USER/Qe${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
+
 export ESPRESSO_PSEUDO=/data/$USER/pseudo
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR
