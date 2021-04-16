@@ -12,6 +12,10 @@ module load GROMACS/2019.3-foss-2019b
 #prepare working dir 
 export WORK_DIR=/data/$USER/gmx${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/ubiquitin
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Dossier Input non spécifié "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error: Dossier Input n'existe pas "; exit 1; }
+
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR
 cd $WORK_DIR
