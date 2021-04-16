@@ -11,8 +11,8 @@ module load cuda10.1/toolkit
 export WORK_DIR=$PWD/${SLURM_JOB_ID}
 export INPUT_DIR=$PWD
 
-[[ -z $INPUT_DIR ]] && { echo "Error: Dossier Input non spécifié "; exit 1; }
-[[ ! -d $INPUT_DIR ]] && { echo "Error: Dossier Input n'existe pas "; exit 1; }
+[[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
 
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR
