@@ -7,9 +7,9 @@ pour y installer  les environnements conda et déclarer son chemin via la variab
 ```
 $export CONDA_ENVS_PATH=/data/$USER/envs
 ```
-Charger le module  anaconda2
+Charger le module  anaconda
 ```
-$module load anaconda2
+$module load anaconda3
 ```
 Créer un environnement avec la version de python souhaité
 ```
