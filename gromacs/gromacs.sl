@@ -29,7 +29,8 @@ else
 fi
 export OMP_NUM_THREADS=$omp_threads
 
-gmx_mpi pdb2gmx -f 1ubq.pdb -o protein.gro 
+#specify forcefied and water   -ff and -water 
+gmx_mpi pdb2gmx -f 1ubq.pdb -o protein.gro  -ff amber03 -water tip3p
 
 #some other gromacs steps ... 
 
