@@ -5,7 +5,8 @@
 #SBATCH -e %x-%j.err
 
 #load modules
-
+module load hdf5/1.10.5
+module load blas/gcc/64/3.8.0
 module load GCC/9.3.0
 module load FreeFem++/gcc/64/4.6
 
