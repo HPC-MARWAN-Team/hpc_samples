@@ -22,7 +22,7 @@ cp $PWD/rungamos.sh $WORK_DIR/
 cd $WORK_DIR
 
 echo "Running Gamos  at $WORK_DIR"
-
+chmod +x rungamos.sh
 $GAMOS62_IMG_EXEC ./rungamos.sh exercise0a.in
 
 echo "Done"
