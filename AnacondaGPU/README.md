@@ -5,7 +5,7 @@ $export CONDA_ENVS_PATH=/data/$USER/envs
 ```
 Charger le module  anaconda
 ```
-$module load anaconda3
+$module load Anaconda3
 ```
 Créer un environnement avec la version de python souhaité
 ```
