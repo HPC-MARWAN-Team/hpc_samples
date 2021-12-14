@@ -3,7 +3,7 @@
 #SBATCH --partition=shortq
 #SBATCH --ntasks=10
 #SBATCH --cpus-per-task=1
-#SBATCH --constraint=ib
+#SBATCH --constraint=ib    # l'option --constraint permet de choisir le type de reseau sur le quel le code parallel sera executé, ib pour infiniband et opa pour omni-path 
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
