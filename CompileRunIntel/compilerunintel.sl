@@ -4,7 +4,7 @@
 #SBATCH -e %x-%j.err
 #SBATCH --partition=shortq
 
-source /cm/shared/apps/intel/ips_2017/bin/compilervars.sh -arch intel64
+module load intel2021/compiler
 
 
 #prepare work_dir
