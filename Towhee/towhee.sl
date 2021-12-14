@@ -3,6 +3,7 @@
 #SBATCH --partition=shortq
 #SBATCH --ntasks=10
 #SBATCH --cpus-per-task=1
+#SBATCH --constraint=ib
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
