@@ -5,7 +5,7 @@
 #SBATCH -e %x-%j.err
 
 export CONDA_ENVS_PATH=/data/$USER/envs
-module load anaconda2
+module load Anaconda3
 source activate my_env_3.6
 unset PYTHONPATH
 python myPythonCode.py
