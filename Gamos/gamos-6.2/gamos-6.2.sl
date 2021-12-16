@@ -23,6 +23,6 @@ cd $WORK_DIR
 
 echo "Running Gamos  at $WORK_DIR"
 chmod +x rungamos.sh
-singularity exec --bind $PWD:/mnt $GAMOS62_IMG /mnt/rungamos.sh /mnt/exercise0a.in
+singularity exec --bind $PWD:/mnt $GAMOS62_IMG /mnt/rungamos.sh exercise0a.in
 
 echo "Done"
