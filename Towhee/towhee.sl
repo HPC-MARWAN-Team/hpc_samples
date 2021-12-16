@@ -3,13 +3,15 @@
 #SBATCH --partition=shortq
 #SBATCH --ntasks=10
 #SBATCH --cpus-per-task=1
-#SBATCH --constraint=ib    # l'option --constraint permet de choisir le type de reseau sur le quel le code parallel sera executé, ib pour infiniband et opa pour omni-path 
+#SBATCH --constraint=opa    # l'option --constraint permet de choisir le type de reseau sur le quel le code parallel sera executé, ib pour infiniband et opa pour omni-path 
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
 #load Towhee
-module load OpenMPI/4.0.3-GCC-9.3.0
-module load Towhee/mpi
+module load intel2021/compiler
+module load binutils/2.34-GCCcore-9.3.0
+module load intel2021/mpi/
+module load Towhee/mpi/8.2.1
 
 export OMPI_MCA_opal_common_ucx_opal_mem_hooks=1
 export OMPI_MCA_pml_ucx_verbose=100
