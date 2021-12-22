@@ -5,10 +5,8 @@
 #SBATCH -e %x-%j.err
 
 #load modules 
-ml geant4/gcc/64/4.10.05
-ml root/gcc/64/6.16.00
-ml gate/gcc/64/8.2
-ml VTK/gcc/64
+
+ module load gate-9.0-gcc-10.2.0-jyekk37
 
 #prepare working dir
 export WORK_DIR=/data/$USER/gate_$SLURM_JOB_ID
