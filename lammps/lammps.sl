@@ -3,11 +3,15 @@
 #SBATCH --ntasks=16
 #SBATCH --ntasks-per-core=1
 #SBATCH --partition=shortq
+#SBATCH --constraint=opa
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
 
-module load LAMMPS/7Aug2019-foss-2019b-Python-3.7.4-kokkos
+module load intel2021/compiler
+module load binutils/2.34-GCCcore-9.3.0
+module load intel2021/mpi/
+module load LAMMPS/29Sep2021
 
 export WORK_DIR=/data/$USER/LMP${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
