@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH -J Gate8.2
 #SBATCH --partition=shortq
+#SBATCH --constraint=opa
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
