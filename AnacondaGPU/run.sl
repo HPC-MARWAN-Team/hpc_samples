@@ -6,7 +6,7 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-module load cuda10.1/toolkit/10.1.243
+module load cuda11.4/toolkit/11.4.2
 module load cudnn
 export CONDA_ENVS_PATH=/data/$USER/envs
 module load Anaconda3
