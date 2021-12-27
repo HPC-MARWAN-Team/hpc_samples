@@ -4,7 +4,7 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-module load R/gcc/64
+module load R
 
 export R_LIBS=/data/$USER/myLibs/R_LIBS
 
