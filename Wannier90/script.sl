@@ -15,6 +15,7 @@ module load intel2021/mkl
 module load openmpi4-ofed54/4.1.2a1
 module load Wannier90/3.1.0
 
+
 #prepare working directory
 export WORK_DIR=/data/$USER/workdir/wannier90_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
