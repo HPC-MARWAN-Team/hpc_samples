@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J Siesta_h2O
-#SBATCH --ntasks=32
+#SBATCH --ntasks=10
 #SBATCH --ntasks-per-core=1
 #SBATCH --partition=shortq
 #SBATCH -o %x-%j.out
