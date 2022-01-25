@@ -9,7 +9,7 @@
 
 ml openmpi/gcc/64/1.10.7
 ml siesta/gcc/64/openmpi/4.1-b4
-ml slurm/17.11.8
+
 
 
 export WORK_DIR=/data/$USER/siesta${SLURM_JOB_ID}
