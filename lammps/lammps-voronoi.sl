@@ -8,7 +8,7 @@
 #SBATCH -e %x-%j.err
 
 #load the module 
-module load lammps-20210310-gcc-10.2.0-56zbgsj
+module load lammps-20210310-gcc-10.2.0-ilp5cpz
 
 #inspect job 
 scontrol  show jobid -dd ${SLURM_JOB_ID}
