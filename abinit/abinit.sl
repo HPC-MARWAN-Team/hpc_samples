@@ -7,12 +7,12 @@
 #SBATCH -e %x-%j.err
 
 #load modules 
-source /cm/shared/apps/intel/ips_2017/bin/compilervars.sh -arch intel64 -platform linux
-module load abinit/intel
+module load abinit-9.4.2-gcc-10.2.0-rezdixl
+
 
 #prepare working dir 
-export WORK_DIR=/data/$USER/Abinit_${SLURM_JOB_ID}
-export INPUT_DIR=$PWD/test_paral
+export WORK_DIR=/home/$USER/Abinit_${SLURM_JOB_ID}
+export INPUT_DIR=$PWD/input_dir
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
 [[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
@@ -24,6 +24,6 @@ cd $WORK_DIR
 
 echo "Running abinit with np=$SLURM_NTASKS  at $WORK_DIR"
 
-mpirun -np $SLURM_NTASKS abinit < tbasepar_1.files >& log
+run abinit  input.abi >& log
 
 echo "DONE"
