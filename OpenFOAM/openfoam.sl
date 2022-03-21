@@ -6,11 +6,7 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-module load openmpi/gcc/64/1.10.7
-module load boost/gcc/64
-module load qt/gcc/64
-
-module load OpenFoam/openmpi/gcc/64/2.4.x
+module load openfoam-2106-gcc-10.2.0-rmtst2n
 
 source $OPENFOAM_BASH
 
