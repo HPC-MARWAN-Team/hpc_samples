@@ -8,7 +8,6 @@
 
 module load openfoam-2106-gcc-10.2.0-rmtst2n
 
-source $OPENFOAM_BASH
 
 export WORK_DIR=/data/$USER/OF_${SLURM_JOB_ID}
 export INPUT_DIR=/home/$USER/cavity
@@ -23,7 +22,7 @@ cd $WORK_DIR
 echo "Lancement de OpenFoam with  $SLURM_NTASKS at $WORK_DIR"
 
 decomposePar
-mpirun -np $SLURM_NTASKS  icoFoam -parallel
+srun  icoFoam -parallel
 reconstructPar
 
 echo " Termine "
