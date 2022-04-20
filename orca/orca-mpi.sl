@@ -6,8 +6,8 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-module load openmpi/gcc/64/2.0.2
-module load orca/openmpi/4.0.1.2
+module load Orca/openmpi/5.0.1
+module load openmpi-4.1.1-gcc-10.2.0-f4hp5zh
 
 
 export WORK_DIR=/data/$USER/Orca_${SLURM_JOB_ID}
