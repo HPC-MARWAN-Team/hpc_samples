@@ -25,7 +25,7 @@ Se connecter à la machine GPU pour y installer les outils nécessaires
 
 ```
 $squeue -j 24200
-affiche le nom du node gpu allouer.
+affiche le nom du node gpu allouer soit gpu51 ou gpu52.
 
 $ssh gpuname
 $module load cuda11.4/toolkit/11.4.2
