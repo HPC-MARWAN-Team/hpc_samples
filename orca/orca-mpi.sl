@@ -9,6 +9,7 @@
 module load Orca/openmpi/5.0.1
 module load openmpi-4.1.1-gcc-10.2.0-f4hp5zh
 
+sg orcagroup
 
 export WORK_DIR=/data/$USER/Orca_${SLURM_JOB_ID}
 export INPUT_FILE=$PWD/input4cpu.in
