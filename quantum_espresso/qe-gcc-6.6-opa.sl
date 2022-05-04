@@ -3,6 +3,7 @@
 #SBATCH --ntasks=16
 #SBATCH --ntasks-per-core=1
 #SBATCH --partition=defq
+#SBATCH --constraint=opa
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
