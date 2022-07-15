@@ -2,6 +2,7 @@
 #SBATCH --job-name="GPU_test"
 #SBATCH --partition=gpu-testq #partition de test limitée a 2h, changer à gpu-prodq 
 #SBATCH --gres=gpu:1
+#SBATCH --account=gpu_users
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 module unload gcc/7.2.0
