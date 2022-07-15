@@ -1,3 +1,6 @@
+## Demande d'ajout au groupe gpu_users
+les utilisateurs qui ont besoin exploiter les cartes GPU, sont invité à envoyer une demande à l'équipe HPC-MARWAN pour les ajouter dans la liste de gpu_users.
+
 ### Créer votre  environnement Python 
 Créer le dossier /data/$USER/envs pour y créer les environnements conda et déclarer son chemin via la variable CONDA_ENVS_PATH
 ```
@@ -18,7 +21,7 @@ $source activate my_env_3.6
 ### Installer les packages nécessaires sur la machine GPU
 Allouer une heure d’accès à la machine GPU
 ```
-$salloc  -t 60  --gres=gpu:1  --partition=gpu-testq   
+$salloc  -t 60  --gres=gpu:1  --partition=gpu-testq  --account=gpu_users  
 Submitted batch job 24200
 ```
 Se connecter à la machine GPU pour y installer les outils nécessaires 
@@ -51,7 +54,7 @@ $scancel 24200
 Une fois les outils nécessaires installés, créer le script de lancement du calcul souhaité, et lancer le script via la commande sbatch 
 Le script doit contenir la condition suivante pour allouer le nœud GPU au job 
   >   #SBATCH --partition=gpu-testq 
-  
+  >   #SBATCH --account=gpu_users
   >   #SBATCH --gres=gpu:2
 
 A noter que la partition **gpu-testq** est limitée à 2 heures .elle est utile pour les jobs de tests.
