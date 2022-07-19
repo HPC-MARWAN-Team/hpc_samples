@@ -16,5 +16,5 @@ cp $INPUT_DIR/* $WORK_DIR
 #run
 echo "Running S4 in $WORK_DIR"
 cd $WORK_DIR
-S4 tri.lua 
+S4 tri.lua > output-file.txt
 echo "Done"
