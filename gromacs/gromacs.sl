@@ -33,6 +33,7 @@ export OMP_NUM_THREADS=$omp_threads
 gmx_mpi pdb2gmx -f 1ubq.pdb -o protein.gro  -ff amber03 -water tip3p
 
 #some other gromacs steps ... 
+#check readme for more option on parallelization scheme ... 
 
 mpirun -np $SLURM_NTASKS  gmx_mpi mdrun -v -deffnm em
 
