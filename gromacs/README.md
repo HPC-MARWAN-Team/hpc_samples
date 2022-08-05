@@ -13,6 +13,8 @@ L'utilisateur peux tester plusieurs options de parallelisme  en spécifiant la p
 
 puis comparer l'avancement de chaque configuration  ( nombre de steps atteint , date de fin estimée )  afin  choisir le mode de parallélisme  optimal pour son  calcul  .
 
+## Exemple de mdrun  sur un seul noeud : 
+
 Exemples de tests Avec le script [gromacs_1NxMyT.sl](gromacs_1NxMyT.sl) fournit en exemple :
 
 ```
@@ -33,5 +35,9 @@ gmx mdrun -ntmpi $SLURM_TASKS_PER_NODE -ntomp $SLURM_CPUS_PER_TASK -v -deffnm md
 | 4  | 8  | gmx mdrun -ntmpi 4 -ntomp 8  | 
 | 8  | 4  | gmx mdrun -ntmpi 8 -ntomp 4  | 
 
+## Exemple de mdrun  sur plusieurs noeuds (MPI) : 
+.... Coming Soon ....
 
+## Acceleration GPU : 
 
+.... Coming Soon ....
