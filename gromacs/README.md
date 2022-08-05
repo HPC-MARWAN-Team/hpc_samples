@@ -1,4 +1,4 @@
-### Parallelization schemes 
+### Options de parallélisme 
 
 Pour obtenir une meuilleure performance de l'application Gromacs ( l'outil mdrun ) , l'utilisateur est invité a consulter la documentation officielle sur : 
 
