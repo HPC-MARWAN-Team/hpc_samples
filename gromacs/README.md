@@ -22,9 +22,9 @@ Exemples de tests Avec le script [gromacs_1NxMyT.sl](gromacs_1NxMyT.sl) fournit 
 ```
 
 le choix de X et Y se traduit en option ntmpi et ntomp de mrdun sur la commande 
-
+```
 gmx mdrun -ntmpi $SLURM_TASKS_PER_NODE -ntomp $SLURM_CPUS_PER_TASK -v -deffnm md_0_10
-
+```
 
 | X  | Y  | Commandes                    | 
 | ---| ---| -----------------------------| 
