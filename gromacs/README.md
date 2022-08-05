@@ -36,6 +36,7 @@ gmx mdrun -ntmpi $SLURM_TASKS_PER_NODE -ntomp $SLURM_CPUS_PER_TASK -v -deffnm md
 | 8  | 4  | gmx mdrun -ntmpi 8 -ntomp 4  | 
 
 ## Exemple de mdrun  sur plusieurs noeuds (MPI) : 
+
 .... Coming Soon ....
 
 ## Acceleration GPU : 
