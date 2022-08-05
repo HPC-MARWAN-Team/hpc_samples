@@ -13,7 +13,7 @@ L'utilisateur peux tester plusieurs options de parallelisme  en spécifiant la p
 
 puis comparer l'avancement de chaque configuration  ( nombre de steps atteint , date de fin estimée )  afin  choisir le mode de parallélisme  optimal pour son  calcul  .
 
-Exemples de tests Avec le script gromacs_1NxMyT.sl fournit en exemple :
+Exemples de tests Avec le script [gromacs_1NxMyT.sl](gromacs_1NxMyT.sl) fournit en exemple :
 
 ```
 #SBATCH --nodes=1
