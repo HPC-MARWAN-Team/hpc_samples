@@ -51,7 +51,7 @@ le choix de X et Y se traduit en option np et ntomp de mrdun sur la commande
 mpirun -np $SLURM_NTASKS gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm md_0_10
 ```
 
-**NB1** :  l'utilisateur est invité à faire des tests pour avoir une estimation sur la performance avant de lancer son job de production  . pour les inputs réduit , l execution de mdru sur un seul noeud offre plus de performance .
+**NB** :  l'utilisateur est invité à faire des tests pour avoir une estimation sur la performance avant de lancer son job de production  . pour les inputs réduit , l execution de mdrun sur un seul noeud peut s'averer plus rapide .
 
 
 ## Acceleration GPU : 
