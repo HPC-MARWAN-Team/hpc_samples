@@ -1,10 +1,10 @@
 ### Options de parallélisme 
 
-Pour obtenir une meuilleure performance de l'application Gromacs ( l'outil mdrun ) , l'utilisateur est invité a consulter la documentation officielle sur : 
+Pour obtenir une meuilleure performance de l'application Gromacs ( l'outil mdrun ) , l'utilisateur est invité à consulter la documentation officielle sur : 
 
 https://manual.gromacs.org/documentation/current/user-guide/mdrun-performance.html 
 
-L'utilisateur peux tester plusieurs options de parallelisme  en spécifiant la partition **defq** un **temps de calcul** réduit (15 min par exemple )  : 
+L'utilisateur peut tester plusieurs options de parallelisme  en spécifiant la partition **defq** un **temps de calcul** réduit (15 min par exemple )  : 
 
 ```
 #SBATCH --partition=defq
@@ -37,7 +37,22 @@ gmx mdrun -ntmpi $SLURM_TASKS_PER_NODE -ntomp $SLURM_CPUS_PER_TASK -v -deffnm md
 
 ## Exemple de mdrun  sur plusieurs noeuds (MPI) : 
 
-.... Coming Soon ....
+Selon la complexité du probleme a simuler , il se peut que l'utilisateur ai besoin de reserver plusiers noeuds afin d effectuer son calcul . le script  [gromacs_2NxMyT.sl](gromacs_2NxMyT.sl) propose un tel exemple : 
+
+```
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=X
+#SBATCH --cpus-per-task=Y
+```
+
+le choix de X et Y se traduit en option np et ntomp de mrdun sur la commande 
+
+```
+mpirun -np $SLURM_NTASKS gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm md_0_10
+```
+
+**NB1** :  l'utilisateur est invité à faire des tests pour avoir une estimation sur la performance avant de lancer son job de production  . pour les inputs réduit , l execution de mdru sur un seul noeud offre plus de performance .
+
 
 ## Acceleration GPU : 
 
