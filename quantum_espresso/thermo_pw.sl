@@ -8,13 +8,14 @@
 
 #load qe requirement
 module load blas/gcc/64/3.8.0
-module load lapack/gcc/64/3.8.0
+module load lapack/gcc/64/3.9.0
+module load fftw3/openmpi/gcc/64/3.3.8
+module load openmpi/gcc/64/1.10.7
 module load hdf5/1.10.1
-module load slurm/17.11.8
-module load openmpi/gcc/64/2.0.2
+module load intel2021/mkl/latest
 
 #load qe
-module load qe/openmpi/gcc/64/6.4.1
+module load QuantumESPRESSO/gcc/64/7.1
 
 #prepare work dir
 export WORK_DIR=/data/$USER/QeThermo${SLURM_JOB_ID}
