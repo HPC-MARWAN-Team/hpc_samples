@@ -5,8 +5,7 @@
 #SBATCH -e %x-%j.err
 
 #load modules
-source /cm/shared/apps/intel/ips_2017/bin/compilervars.sh -arch intel64 -platform linux
-module load FreeFem++/intel
+module load freefem-4.10-gcc-10.2.0-p2i6276
 
 #prepare working directory
 export WORK_DIR=/data/$USER/freefem_${SLURM_JOB_ID}
