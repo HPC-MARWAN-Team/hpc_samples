@@ -27,7 +27,7 @@ cd $WORK_DIR
 
 echo "Running FreeFem with $SLURM_NTASKS at $WORK_DIR"
 
-mpirun -np $SLURM_NTASKS FreeFem++-mpi parallel.edp > parallel.out
+mpirun -np $SLURM_NTASKS FreeFem++ -mpi parallel.edp > parallel.out
 
 
 echo "Done"
