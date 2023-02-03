@@ -11,7 +11,7 @@ module load openmpi/gcc/64/1.10.7
 module load intel2021/mpi/2021.4.0
 module load intel2021/compiler
 module load hdf5/1.10.1
-module load Freefem/intel/4.12
+module load FreeFem/intel/4.12
 
 #prepare working directory
 export WORK_DIR=/data/$USER/freefem_${SLURM_JOB_ID}
