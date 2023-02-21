@@ -56,9 +56,9 @@ mpirun -np $SLURM_NTASKS gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm 
 
 ## Acceleration GPU : 
 
-le script gromacs_gpu.sl [gromacs_gpu.sl](gromacs_gpu.sl)  les directives SLURM et le module gromacs avec support 
+le script gromacs_gpu.sl [gromacs_gpu.sl](gromacs_gpu.sl)  les directives SLURM et le module gromacs pour utiliser le carte GPU:  
 
-exemple d'execution 
+une fois le job en execution , vérifier le fichier output de gromacs pour confirmer la detection de la carte GPU  
 
 1 GPU selected for this run.
 Mapping of GPU IDs to the 2 GPU tasks in the 1 rank on this node:
@@ -73,8 +73,10 @@ Non-default thread affinity set, disabling internal thread affinity
 Using 20 OpenMP threads
 
 
-verifier que gromacs s'execute 
-à l aide de la commande nvidia-smi 
+confimer  que gromacs s'execute sur la carte GPU à l aide de la commande nvidia-smi 
+
+ssh <gpu_node> 
+nvidia-smi 
 
 [gromacs_gpu.png](gromacs_gpu.png)
 
