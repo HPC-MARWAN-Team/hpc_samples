@@ -56,7 +56,7 @@ mpirun -np $SLURM_NTASKS gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm 
 
 ## Acceleration GPU : 
 
-Le script gromacs_gpu.sl [gromacs_gpu.sl](gromacs_gpu.sl)  montre les directives SLURM et le module gromacs à charger pour utiliser la version accélérée avec  GPU.
+Le script gromacs_gpu.sl [gromacs_gpu.sl](gromacs_gpu.sl)  montre les directives SLURM , le module gromacs à charger et la commandes mdrun qui permettent d'utiliser la version accélérée avec  GPU.
   
 Une fois le job en execution , vérifier le fichier output de gromacs pour confirmer la detection de la carte GPU  
 
