@@ -60,7 +60,7 @@ le script gromacs_gpu.sl [gromacs_gpu.sl](gromacs_gpu.sl)  les directives SLURM 
 
 une fois le job en execution , vérifier le fichier output de gromacs pour confirmer la detection de la carte GPU  
 
-_ 1 GPU selected for this run.
+> 1 GPU selected for this run.
 Mapping of GPU IDs to the 2 GPU tasks in the 1 rank on this node:
   PP:0,PME:0
 PP tasks will do (non-perturbed) short-ranged interactions on the GPU
@@ -70,10 +70,10 @@ Using 1 MPI process
 
 Non-default thread affinity set, disabling internal thread affinity
 
-Using 20 OpenMP threads _
+Using 20 OpenMP threads 
 
 
-confimer  que gromacs s'execute sur la carte GPU à l aide de la commande nvidia-smi 
+confimer  que gromacs s'execute sur la carte GPU à l aide de la commande nvidia-smi lancé au niveau du noeud gpu alloué au Job :
 
 ```
 ssh <gpu_node> 
