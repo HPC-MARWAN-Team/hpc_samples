@@ -67,9 +67,7 @@ PP tasks will do (non-perturbed) short-ranged interactions on the GPU
 PP task will update and constrain coordinates on the CPU
 PME tasks will do all aspects on the GPU
 Using 1 MPI process
-
 Non-default thread affinity set, disabling internal thread affinity
-
 Using 20 OpenMP threads 
 
 
