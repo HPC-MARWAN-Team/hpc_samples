@@ -75,8 +75,10 @@ Using 20 OpenMP threads
 
 confimer  que gromacs s'execute sur la carte GPU à l aide de la commande nvidia-smi 
 
+```
 ssh <gpu_node> 
 nvidia-smi 
+```
 
 [gromacs_gpu.png](gromacs_gpu.png)
 
