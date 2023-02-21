@@ -36,6 +36,6 @@ gmx_mpi pdb2gmx -f 1ubq.pdb -o protein.gro  -ff amber03 -water tip3p
 #some other gromacs steps ... 
 #check readme for more option on parallelization scheme (nt ,ntmpi ,ntomp,npme,ntomp_pme ...)
 
-gmx mdrun -ntmpi $SLURM_TASKS_PER_NODE -ntomp $SLURM_CPUS_PER_TASK -v -deffnm em
+gmx_mpi mdrun -ntmpi $SLURM_TASKS_PER_NODE -ntomp $SLURM_CPUS_PER_TASK -v -deffnm em
 
 echo "Done"
