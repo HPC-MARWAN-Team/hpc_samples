@@ -15,7 +15,7 @@ puis comparer l'avancement de chaque configuration  ( nombre de steps atteint , 
 
 ## Exemple de mdrun  sur un seul noeud : 
 
-Exemples de tests Avec le script [gromacs_1NxMyT.sl](gromacs_1NxMyT.sl) fournit en exemple :
+Exemples de specs avec le script [gromacs_1NxMyT.sl](gromacs_1NxMyT.sl)  :
 
 ```
 #SBATCH --nodes=1
@@ -51,9 +51,31 @@ le choix de X et Y se traduit en option np et ntomp de mrdun sur la commande
 mpirun -np $SLURM_NTASKS gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm md_0_10
 ```
 
-**NB** :  l'utilisateur est invité à faire des tests pour avoir une estimation sur la performance avant de lancer son job de production  . pour les inputs réduit , l execution de mdrun sur un seul noeud peut s'averer plus rapide .
+**NB** :  l'utilisateur est invité à faire des tests pour avoir une estimation sur la performance avant de lancer son job de production  . pour les inputs réduits , l' execution de mdrun sur un seul noeud peut s'averer plus rapide .
 
 
 ## Acceleration GPU : 
 
-.... Coming Soon ....
+le script gromacs_gpu.sl [gromacs_gpu.sl](gromacs_gpu.sl)  les directives SLURM et le module gromacs avec support 
+
+exemple d'execution 
+
+1 GPU selected for this run.
+Mapping of GPU IDs to the 2 GPU tasks in the 1 rank on this node:
+  PP:0,PME:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+PME tasks will do all aspects on the GPU
+Using 1 MPI process
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 20 OpenMP threads
+
+
+verifier que gromacs s'execute 
+à l aide de la commande nvidia-smi 
+
+[gromacs_gpu.png](gromacs_gpu.png)
+
+
