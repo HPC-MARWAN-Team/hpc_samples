@@ -80,6 +80,6 @@ ssh <gpu_node>
 nvidia-smi 
 ```
 
-[gromacs_gpu.png](gromacs_gpu.png)
+![gromacs_gpu_nvidia](./gromacs_gpu.png)
 
 
