@@ -37,6 +37,6 @@ gmx_mpi pdb2gmx -f 1ubq.pdb -o protein.gro  -ff amber03 -water tip3p
 
 #some other gromacs steps ... 
 
-gmx_mpi mdrun -v  -v -deffnm em
+gmx_mpi mdrun -v   -deffnm em
 
 echo "Done"
