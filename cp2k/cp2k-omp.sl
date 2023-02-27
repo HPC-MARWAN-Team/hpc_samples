@@ -14,7 +14,7 @@ else
     OMP_NUM_THREADS=1
 fi
 #load modules 
-module load cp2k/ssmp/6.1
+module load CP2K/8.2-intel-2021a
 
 #prepare working dir  
 export WORK_DIR=/data/$USER/${SLURM_JOB_ID}
