@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH -J ORCA_Job
 #SBATCH --ntasks=4
-#SBATCH --ntasks-per-core=1
 #SBATCH --partition=defq
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
