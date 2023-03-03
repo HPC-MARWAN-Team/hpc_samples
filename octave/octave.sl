@@ -5,8 +5,8 @@
 #SBATCH -e %x-%j.err
 
 
-module load gcc/7.2.0
-module load octave/gcc/5.1.0
+
+module load octave-6.2.0-gcc-10.2.0-foogmtn
 
 export WORK_DIR=/data/$USER/Octav_$SLURM_JOB_ID
 export INPUT_DIR=$PWD/myInput
