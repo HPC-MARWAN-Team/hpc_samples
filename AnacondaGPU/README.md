@@ -53,9 +53,12 @@ $scancel 24200
 ### Lancer votre calcul 
 Une fois les outils nécessaires installés, créer le script de lancement du calcul souhaité, et lancer le script via la commande sbatch 
 Le script doit contenir la condition suivante pour allouer le nœud GPU au job 
-  >   #SBATCH --partition=gpu-testq 
+  >   #SBATCH --partition=gpu-testq
+  
   >   #SBATCH --account=gpu_users
+  
   >   #SBATCH --gres=gpu:2
+  
 
 A noter que la partition **gpu-testq** est limitée à 2 heures .elle est utile pour les jobs de tests.
 pour des jobs plus long, veuillez utiliser la partition **gpu-prodq** ( qui permet une durée de 7 jours max ) 
