@@ -2,6 +2,7 @@
 #SBATCH -J Gromacs
 #SBATCH --partition=gpu-testq
 #SBATCH --account=gpu_users
+#SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
