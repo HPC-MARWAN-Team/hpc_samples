@@ -58,6 +58,7 @@ Le script doit contenir la condition suivante pour allouer le nœud GPU au job
   >   #SBATCH --account=gpu_users
   
   >   #SBATCH --gres=gpu:2
+  >   #SBATCH --qos=gpu
   
 
 A noter que la partition **gpu-testq** est limitée à 2 heures .elle est utile pour les jobs de tests.
