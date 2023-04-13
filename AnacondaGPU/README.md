@@ -21,7 +21,7 @@ $source activate my_env_3.6
 ### Installer les packages nécessaires sur la machine GPU
 Allouer une heure d’accès à la machine GPU
 ```
-$salloc  -t 60  --gres=gpu:1  --partition=gpu-testq  --account=gpu_users  
+$salloc  -t 60  --gres=gpu:1  --qos=gpu --partition=gpu-testq  --account=gpu_users  
 Submitted batch job 24200
 ```
 Se connecter à la machine GPU pour y installer les outils nécessaires 
