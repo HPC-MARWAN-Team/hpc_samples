@@ -12,8 +12,6 @@ module load intel2021/compiler/latest
 module load blas/gcc/64/3.8.0
 module load lapack/gcc/64/3.9.0
 module load cmake-3.21.4-gcc-10.2.0-dwe6sfn
-module load intel2021/compiler-rt/latest
-module load intel2021/tbb/latest
 module load fftw3/openmpi/gcc/64/3.3.8
 module load intel2021/mpi/latest
 
