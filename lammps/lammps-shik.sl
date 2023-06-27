@@ -15,7 +15,7 @@ module load cmake-3.21.4-gcc-10.2.0-dwe6sfn
 module load fftw3/openmpi/gcc/64/3.3.8
 module load intel2021/mpi/latest
 
-module load LAMMPS/28Mar2023
+module load LAMMPS/28Mars2023
 
 
 export WORK_DIR=/data/$USER/workdir/lammps/LMP${SLURM_JOB_ID}
