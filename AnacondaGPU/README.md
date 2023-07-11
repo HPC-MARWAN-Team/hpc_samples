@@ -27,14 +27,23 @@ $which python
 Allouer une heure d’accès à la machine GPU 
 ```
 $salloc  -t 60  --gres=gpu:1  --qos=gpu --partition=gpu-testq  --account=gpu_users  
-Submitted batch job 24200
+salloc: Pending job allocation 24200
+salloc: job 24200 queued and waiting for resources
+salloc: job 24200 has been allocated resources
+salloc: Granted job allocation 24200
+
+```
+une fois l'allocation effectuée, vérifier le nom de la machine gpu réservée à l'aide de la commande squeue en utilisant l'identifiant ( exemple 24200) 
+
+```
+$squeue -j 24200
+
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            24200 gpu-testq     bash username l  R       4:27      1 gpu52
 ```
 Se connecter à la machine GPU pour y installer les outils nécessaires 
 
 ```
-$squeue -j 24200
-affiche le nom du node gpu allouer soit gpu51 ou gpu52.
-
 $ssh gpuname
 $module load cuda11.4/toolkit/11.4.2
 ```
