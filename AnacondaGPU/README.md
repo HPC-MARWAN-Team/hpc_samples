@@ -10,7 +10,7 @@ Charger le module  anaconda
 ```
 $module load Anaconda3
 ```
-Créer un environnement avec la version de python souhaité
+Créer un environnement en choisissant son nom ( exemple  my_env_3.6  ) avec la version de python souhaité ( exemple 3.6 )  
 ```
 $conda create -n my_env_3.6 python=3.6
 ```
@@ -18,8 +18,13 @@ Activer l’environnement
 ```
 $source activate my_env_3.6
 ```
+vérifier que l'envirobnnement  a bien été chargé  
+```
+$which python
+      /data/$USER/envs/my_env_3.6/bin/python
+```
 ### Installer les packages nécessaires sur la machine GPU
-Allouer une heure d’accès à la machine GPU
+Allouer une heure d’accès à la machine GPU 
 ```
 $salloc  -t 60  --gres=gpu:1  --qos=gpu --partition=gpu-testq  --account=gpu_users  
 Submitted batch job 24200
