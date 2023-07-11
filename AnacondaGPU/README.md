@@ -21,7 +21,7 @@ $source activate my_env_3.6
 vérifier que l'envirobnnement  a bien été chargé  
 ```
 $which python
-      /data/$USER/envs/my_env_3.6/bin/python
+      /data/username/envs/my_env_3.6/bin/python
 ```
 ### Installer les packages nécessaires sur la machine GPU
 Allouer une heure d’accès à la machine GPU 
