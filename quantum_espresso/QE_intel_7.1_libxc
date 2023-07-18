@@ -1,0 +1,42 @@
+#!/bin/bash
+#SBATCH -J QE_libxc
+#SBATCH --ntasks=16
+#SBATCH --ntasks-per-core=1
+#SBATCH --partition=defq
+#SBATCH --constraint=ib
+#SBATCH -o %x-%j.out
+#SBATCH -e %x-%j.err
+
+
+#load qe requirement
+module load blas/gcc/64/3.8.0
+module load lapack/gcc/64/3.9.0
+module load fftw3/openmpi/gcc/64/3.3.8
+module load openmpi/gcc/64/1.10.7
+module load hdf5/1.10.1
+module load intel2021/mkl/latest
+module load libxc/5.1.6-GCC-11.2.0
+
+#load qe
+
+module load QuantumESPRESSO/intel/7.1
+
+#prepare work dir
+export WORK_DIR=/scratch/users/$USER/workdir/QeLIBXC_${SLURM_JOB_ID}
+export INPUT_DIR=$PWD/INPUT
+
+[[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
+[[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
+
+export ESPRESSO_PSEUDO=/scratch/users/$USER/pseudo
+
+mkdir -p $WORK_DIR
+cp -R $INPUT_DIR/* $WORK_DIR
+cd $WORK_DIR
+
+#run
+echo "Running Quantum Espresso with $SLURM_NTASKS at $WORK_DIR"
+
+mpirun -np $SLURM_NTASKS pw.x -i input_scan.in > output_scan.out
+
+echo "Done"
