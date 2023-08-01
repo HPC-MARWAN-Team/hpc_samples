@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J QE_PWTK
-#SBATCH --ntasks=10
+#SBATCH --ntasks=10     # le nombre de process declaré au niveau de la configuration PWTK
 #SBATCH --ntasks-per-core=1
 #SBATCH --partition=defq
 #SBATCH -o %x-%j.out
