@@ -32,6 +32,6 @@ cd $WORK_DIR
 #run
 echo "Running Quantum Espresso with $SLURM_NTASKS at $WORK_DIR"
 
-mpirun -np $SLURM_NTASKS thermo_pw.x -i myInputFile.in > myOutputFile.out
+mpirun -np $SLURM_NTASKS pw.x -i myInputFile.in > myOutputFile.out
 
 echo "Done"
