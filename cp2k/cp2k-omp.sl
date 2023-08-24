@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J cp2k_OMP
-#SBATCH -n 40
+#SBATCH -n 16
 #SBATCH -N 1
 #SBATCH --partition=shortq
 #SBATCH -o %x-%j.out
