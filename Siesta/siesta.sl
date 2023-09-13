@@ -6,7 +6,9 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-
+ml netcdf-c/gcc/64
+ml netcdf-fortran/gcc/64/4.4.4
+ml hdf5
 ml openmpi/gcc/64/1.10.7
 ml siesta/gcc/64/openmpi/4.1-b4
 
