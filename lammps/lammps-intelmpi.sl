@@ -10,8 +10,8 @@
 
 module load intel2021/compiler
 module load binutils/2.34-GCCcore-9.3.0
-module load intel2021/mpi/
-module load LAMMPS/29Sep2021
+module load intel2021/mpi
+module load LAMMPS/28Mars2023
 
 export WORK_DIR=/data/$USER/LMP${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
