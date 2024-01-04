@@ -4,8 +4,8 @@
 #SBATCH -o DLPOLY-%j.out #messages de log
 #SBATCH -e DLPOLY-%j.err #messages d'erreurs
 
-module load OpenMPI/3.1.4-GCC-8.3.0
-module load dl-poly/5.0.0
+
+module load DL_POLY_4/5.0.0-foss-2020b
 
 
 echo " Creation d'espace de travail /data/$USER/workdir/DLPOLY_${SLURM_JOB_ID}" 
@@ -42,7 +42,7 @@ while test $i -le 1
 do
 cp $REP_CONTROL/CONTROL$i ./CONTROL
 
-mpirun -np 1 /data/shared/apps2/dl-poly/5.0.0/bin/DLPOLY.Z
+mpirun -np 1 DLPOLY.Z
 
 wait
 
