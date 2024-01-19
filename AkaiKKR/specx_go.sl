@@ -17,6 +17,6 @@ cd $WORK_DIR
 
 echo "Lancement de SPECX  at $WORK_DIR"
 
-./specx<Test.inp>go.out
+specx<Test.inp>go.out
 
 echo " Termine "
