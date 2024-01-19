@@ -10,6 +10,6 @@ cd $WORK_DIR
 
 echo "Lancement de DOS  at $WORK_DIR"
 
-./specx<Test.inp>dos.out
+specx<Test.inp>dos.out
 
 echo " Termine "
