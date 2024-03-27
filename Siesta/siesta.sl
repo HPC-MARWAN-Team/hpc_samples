@@ -3,6 +3,7 @@
 #SBATCH --ntasks=10
 #SBATCH --ntasks-per-core=1
 #SBATCH --partition=shortq
+#SBATCH --constraint=ib
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
