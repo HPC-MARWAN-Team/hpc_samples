@@ -3,7 +3,7 @@
 #SBATCH --ntasks=10     # le nombre de process declaré au niveau de la configuration PWTK
 #SBATCH --ntasks-per-core=1
 #SBATCH --partition=defq
-#SBATCH --mem-per-cpu=10 GB   # la taille de mémoire par cpu que vous estimez nécessaire pour votre calcul.
+#SBATCH --mem-per-cpu=10G   # la taille de mémoire par cpu que vous estimez nécessaire pour votre calcul.
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
