@@ -6,7 +6,9 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-
+module load intel2021/compiler
+module load intel2021/mpi/2021.4.0
+module load intel2021/mkl/2021.4.0
 module load HONPAS/intel/4.1.5
 
 export WORK_DIR=/data/$USER/workdir/honpas_${SLURM_JOB_ID}
