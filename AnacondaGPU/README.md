@@ -2,9 +2,9 @@
 les utilisateurs qui ont besoin exploiter les cartes GPU, sont invité à envoyer une demande à l'équipe HPC-MARWAN pour les ajouter dans la liste de gpu_users.
 
 ### Créer votre  environnement Python 
-Créer le dossier /data/$USER/envs pour y créer les environnements conda et déclarer son chemin via la variable CONDA_ENVS_PATH
+Créer le dossier /home/$USER/envs pour y créer les environnements conda et déclarer son chemin via la variable CONDA_ENVS_PATH
 ```
-$export CONDA_ENVS_PATH=/data/$USER/envs
+$export CONDA_ENVS_PATH=/home/$USER/envs
 ```
 Charger le module  anaconda
 ```
@@ -21,7 +21,7 @@ $source activate my_env_3.6
 vérifier que l'envirobnnement  a bien été chargé  
 ```
 $which python
-      /data/username/envs/my_env_3.6/bin/python
+      /home/username/envs/my_env_3.6/bin/python
 ```
 ### Installer les packages nécessaires sur la machine GPU
 Allouer une heure d’accès à la machine GPU 
