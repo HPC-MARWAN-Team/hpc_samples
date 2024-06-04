@@ -1,11 +1,11 @@
 ### Créer votre  environnement Python 
 Créer le dossier /data/$USER/envs
 ```
-$mkdir /data/$USER/envs
+$mkdir /home/$USER/envs
 ```
 pour y installer  les environnements conda et déclarer son chemin via la variable CONDA_ENVS_PATH
 ```
-$export CONDA_ENVS_PATH=/data/$USER/envs
+$export CONDA_ENVS_PATH=/home/$USER/envs
 ```
 Charger le module  anaconda
 ```
