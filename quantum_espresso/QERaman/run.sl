@@ -41,6 +41,6 @@ echo "Running ph_mat.x"
 mpirun -np $SLURM_NTASKS ph_mat.x -i ph.in> ph.out
 
 echo "Running raman.x"
-mpirun -np $SLURM_NTASKS raman.x -i raman.in> raman.out
+raman.x -i raman.in> raman.out
 
 echo "Done"
