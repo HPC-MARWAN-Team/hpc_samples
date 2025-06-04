@@ -1,5 +1,5 @@
 ### Créer votre  environnement Python 
-Créer le dossier /data/$USER/envs
+Créer le dossier /home/$USER/envs
 ```
 $mkdir /home/$USER/envs
 ```

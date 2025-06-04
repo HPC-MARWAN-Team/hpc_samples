@@ -9,7 +9,7 @@
 module load openfoam-2106-gcc-10.2.0-rmtst2n
 
 
-export WORK_DIR=/data/$USER/OF_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/OF_${SLURM_JOB_ID}
 export INPUT_DIR=/home/$USER/cavity
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

@@ -9,7 +9,7 @@ module load singularity
 module load gamos/ubuntu18/6.2
 
 #prepare working dir
-export WORK_DIR=/data/$USER/gamos${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/gamos${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

@@ -19,13 +19,13 @@ module load intel2021/mkl/latest
 module load QuantumESPRESSO/intel/7.2-thermo_pw.1.8.1
 
 #prepare work dir
-export WORK_DIR=/data/$USER/QeThermo${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/QeThermo${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
 [[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
 
-export ESPRESSO_PSEUDO=/data/$USER/pseudo
+export ESPRESSO_PSEUDO=/home/$USER/pseudo
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR
 cd $WORK_DIR

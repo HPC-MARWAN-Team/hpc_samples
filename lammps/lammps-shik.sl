@@ -18,7 +18,7 @@ module load intel2021/mpi/latest
 module load LAMMPS/28Mars2023
 
 
-export WORK_DIR=/data/$USER/workdir/lammps/LMP${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/workdir/lammps/LMP${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/Input
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR

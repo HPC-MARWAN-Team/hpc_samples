@@ -10,7 +10,7 @@
  module load gate-9.0-gcc-10.2.0-jyekk37
 
 #prepare working dir
-export WORK_DIR=/data/$USER/gate_$SLURM_JOB_ID
+export WORK_DIR=/home/$USER/gate_$SLURM_JOB_ID
 
 mkdir -p $WORK_DIR
 cp $PWD/benchPET/* $WORK_DIR

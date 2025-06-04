@@ -9,7 +9,7 @@ module load root/gcc/64/6.16.00
 module load cmake/gcc/64
 
 #prepare working directory
-export WORK_DIR=/data/$USER/root_$SLURM_JOB_ID
+export WORK_DIR=/home/$USER/root_$SLURM_JOB_ID
 export INPUT_DIR=$PWD/hist
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

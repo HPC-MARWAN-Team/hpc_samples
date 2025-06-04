@@ -17,7 +17,7 @@ fi
 module load CP2K/8.2-intel-2021a
 
 #prepare working dir  
-export WORK_DIR=/data/$USER/${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/${SLURM_JOB_ID}
 export INPUT_DIR=/home/$USER/myInput
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

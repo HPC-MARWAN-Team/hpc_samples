@@ -4,7 +4,7 @@
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 
-export WORK_DIR=/data/$USER/AkaiXXXX # remplacer XXXX par l'identifiant du job de step1
+export WORK_DIR=/home/$USER/AkaiXXXX # remplacer XXXX par l'identifiant du job de step1
 
 cd $WORK_DIR
 

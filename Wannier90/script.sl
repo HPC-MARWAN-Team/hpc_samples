@@ -17,7 +17,7 @@ module load Wannier90/3.1.0
 
 
 #prepare working directory
-export WORK_DIR=/data/$USER/workdir/wannier90_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/workdir/wannier90_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
 
 mkdir -p $WORK_DIR

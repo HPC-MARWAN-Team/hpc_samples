@@ -11,7 +11,7 @@ module load OpenMPI/4.1.1-GCC-11.2.0
 
 sg orcagroup
 
-export WORK_DIR=/data/$USER/Orca_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/Orca_${SLURM_JOB_ID}
 export INPUT_FILE=$PWD/input4cpu.in
 
 [[ -z $INPUT_FILE ]] && { echo "Error: Input File (INPUT_FILE) is not defined "; exit 1; }

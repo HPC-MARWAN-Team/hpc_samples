@@ -24,7 +24,7 @@ module load root/gcc/64
 export OMP_NUM_THREADS=$omp_threads
 
 #prepare working directory 
-export WORK_DIR=/data/$USER/geant4_$SLURM_JOB_ID
+export WORK_DIR=/home/$USER/geant4_$SLURM_JOB_ID
 export INPUT_DIR=$PWD/exemple
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

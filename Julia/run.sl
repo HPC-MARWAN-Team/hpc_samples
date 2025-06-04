@@ -10,7 +10,7 @@
 
 #prepare work_dir
 
-export WORK_DIR=/data/$USER/Julia_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/Julia_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
 
 mkdir -p $WORK_DIR

@@ -9,7 +9,7 @@
 
 module load siesta/gcc/64/openmpi/4.1.5
 
-export WORK_DIR=/data/$USER/siesta${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/siesta${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/H2O
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

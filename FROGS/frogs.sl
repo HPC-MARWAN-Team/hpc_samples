@@ -12,7 +12,7 @@
 module load FROGS/3.1.0
 
 
-export RESULT=/data/$USER/${SLURM_JOB_ID}
+export RESULT=/home/$USER/${SLURM_JOB_ID}
 
 echo " Running FROGS ($FROGS_PATH) with NB_CPU =  $SLURM_NTASKS_PER_NODE and MEM=$SLURM_MEM_PER_NODE  "
 

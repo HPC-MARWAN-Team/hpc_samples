@@ -6,7 +6,7 @@
 
 module load R
 
-export R_LIBS=/data/$USER/myLibs/R_LIBS
+export R_LIBS=/home/$USER/myLibs/R_LIBS
 
 echo "Running R commands  "
 

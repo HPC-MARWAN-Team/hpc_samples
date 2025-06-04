@@ -9,7 +9,7 @@ module load GPAW/20.1.0-foss-2019b-Python-3.7.4
 
 #prepare work_dir
 
-export WORK_DIR=/data/$USER/GPAW_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/GPAW_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
 
 mkdir -p $WORK_DIR

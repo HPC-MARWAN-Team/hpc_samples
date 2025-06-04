@@ -17,8 +17,8 @@ export OMPI_MCA_opal_common_ucx_opal_mem_hooks=1
 export OMPI_MCA_pml_ucx_verbose=100
 
 #prepare working dir 
-export WORK_DIR=/data/$USER/Towhee_${SLURM_JOB_ID}
-export INPUT_DIR=/data/$USER/towhee_input
+export WORK_DIR=/home/$USER/Towhee_${SLURM_JOB_ID}
+export INPUT_DIR=/home/$USER/towhee_input
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
 [[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }

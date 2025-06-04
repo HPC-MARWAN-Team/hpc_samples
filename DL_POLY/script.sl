@@ -8,8 +8,8 @@
 module load DL_POLY_4/5.0.0-foss-2020b
 
 
-echo " Creation d'espace de travail /data/$USER/workdir/DLPOLY_${SLURM_JOB_ID}" 
-export WORK_DIR=/data/$USER/workdir/DLPOLY_${SLURM_JOB_ID}
+echo " Creation d'espace de travail /home/$USER/workdir/DLPOLY_${SLURM_JOB_ID}" 
+export WORK_DIR=/home/$USER/workdir/DLPOLY_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/inputDLPOLY
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR

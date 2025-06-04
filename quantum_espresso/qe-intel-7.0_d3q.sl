@@ -14,9 +14,9 @@ module load QuantumEspresso/intel/7.0_d3q
 
 
 #prepare working directory 
-export WORK_DIR=/data/$USER/${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
-export ESPRESSO_PSEUDO=/data/$USER/pseudo
+export ESPRESSO_PSEUDO=/home/$USER/pseudo
 export OMP_NUM_THREADS=1
 
 mkdir -p $WORK_DIR

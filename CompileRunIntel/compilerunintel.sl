@@ -8,7 +8,7 @@ module load intel2021/compiler
 
 
 #prepare work_dir
-export WORK_DIR=/data/$USER/workdir
+export WORK_DIR=/home/$USER/workdir
 export INPUT_DIR=$PWD/code_and_input
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

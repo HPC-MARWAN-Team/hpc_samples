@@ -18,9 +18,9 @@ module load mpich/ge/gcc/64/3.3.2
 module load  openmpi/gcc/64/1.10.7
 module list  
 
-echo " Creation d'espace de travail /data/$USER/Workdir/Fortran_${SLURM_JOB_ID}" 
+echo " Creation d'espace de travail /home/$USER/Workdir/Fortran_${SLURM_JOB_ID}" 
 
-export WORK_DIR=/data/$USER/workdir/Fortran_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/workdir/Fortran_${SLURM_JOB_ID}
 mkdir -p $WORK_DIR
 
 export INPUT_DIR=$PWD/input

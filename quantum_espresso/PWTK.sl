@@ -25,13 +25,13 @@ module load PWTK/2.0
 
 
 #prepare work dir
-export WORK_DIR=/data/$USER/workdir/QePWTK_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/workdir/QePWTK_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/INPUT
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
 [[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
 
-export ESPRESSO_PSEUDO=/data/$USER/pseudo
+export ESPRESSO_PSEUDO=/home/$USER/pseudo
 
 mkdir -p $WORK_DIR
 cp -R $INPUT_DIR/* $WORK_DIR

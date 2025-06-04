@@ -10,7 +10,7 @@
 module load openbabel-3.0.0-gcc-10.2.0-hensxki
 
 #prepare work_dir
-export WORK_DIR=/data/$USER/workdir/Openbabel${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/workdir/Openbabel${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

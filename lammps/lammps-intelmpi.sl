@@ -13,7 +13,7 @@ module load binutils/2.34-GCCcore-9.3.0
 module load intel2021/mpi
 module load LAMMPS/28Mars2023
 
-export WORK_DIR=/data/$USER/LMP${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/LMP${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/myInput
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }

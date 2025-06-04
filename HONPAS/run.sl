@@ -11,7 +11,7 @@ module load intel2021/mpi/2021.4.0
 module load intel2021/mkl/2021.4.0
 module load HONPAS/intel/4.1.5
 
-export WORK_DIR=/data/$USER/workdir/honpas_${SLURM_JOB_ID}
+export WORK_DIR=/home/$USER/workdir/honpas_${SLURM_JOB_ID}
 export INPUT_DIR=$PWD/input
 
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
