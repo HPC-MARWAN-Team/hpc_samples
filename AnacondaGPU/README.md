@@ -26,11 +26,8 @@ $which python
 ### Installer les packages nécessaires sur la machine GPU
 Allouer une heure d’accès à la machine GPU 
 ```
-$salloc  -t 60  --gres=gpu:1  --qos=gpu --partition=gpu-testq  --account=gpu_users  
-salloc: Pending job allocation 24200
-salloc: job 24200 queued and waiting for resources
-salloc: job 24200 has been allocated resources
-salloc: Granted job allocation 24200
+$srun -t 60  --gres=gpu:1  --qos=gpu --partition=gpu-testq  --account=gpu_users --pty bash 
+
 
 ```
 une fois l'allocation effectuée, vérifier le nom de la machine gpu réservée à l'aide de la commande squeue en utilisant l'identifiant de l'allocation . Reperer le nom de la machine au niveau la colonne NODELIST 
