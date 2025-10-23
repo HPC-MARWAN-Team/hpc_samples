@@ -41,7 +41,7 @@ $squeue -j 24200
 Se connecter à la machine GPU pour y installer les outils nécessaires 
 
 ```
-$ssh gpu52
+
 $module load cuda11.4/toolkit/11.4.2
 ```
  Pour le cas du **Deep learning** , la librairie **cudnn** est déjà installé , pour l’utiliser :
