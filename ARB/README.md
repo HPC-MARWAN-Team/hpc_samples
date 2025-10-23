@@ -6,10 +6,8 @@ $salloc -n1
 ```
 Cette commande permet l’allocation d’un nœud de calcul libre . par défaut , il sera alloué pour une durée de 2 heure (partition defq), changer  la partition avec l’option « -p » selon la durée estimée du calcul 
 ```
-$squeue --job 65467 (JOBID donnée par la commande précédente) 
-```
-```
-$ssh -X node07 (se connecter en mode ssh au noeud réservé au job  donnée par la commande précédente)
+srun --pty bash -i
+
 ```
 une fois connecté au nœud , charger les modules nécessaires pour le lancement de l’application ARB : 
 ```
