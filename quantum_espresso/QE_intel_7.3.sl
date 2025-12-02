@@ -11,8 +11,7 @@
 
 #load qe
 
-module load intel2021/mpi intel2021/mkl intel2021/compiler
-module load QuantumESPRESSO/intel/7.3
+module load QuantumESPRESSO/7.3.1-intel-2023a
 export OMP_NUM_THREADS=1
 
 #prepare work dir
