@@ -1,0 +1,151 @@
+créer fichier h2.fdf (exemple trouvé sur INTERNET) : cœur de calcul (parametre généraux + definition de la structure + reference au psf)
+
+vi h2.fdf 
+
+SystemName      H2 molecule
+SystemLabel     h2
+
+PseudoPath .
+
+NumberOfAtoms   2
+NumberOfSpecies 1
+
+%block ChemicalSpeciesLabel
+ 1 1 H
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant 1.0 Ang
+%block LatticeVectors
+ 10.0  0.0  0.0
+  0.0 10.0  0.0
+  0.0  0.0 10.0
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat Ang
+%block AtomicCoordinatesAndAtomicSpecies
+ 5.0  5.0  4.7  1
+ 5.0  5.0  5.3  1
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+MeshCutoff 200 Ry
+
+PAO.BasisSize    DZP
+PAO.EnergyShift  0.01 Ry
+
+XC.functional   GGA
+XC.authors      PBE
+
+SolutionMethod diagon
+
+MaxSCFIterations 100
+DM.Tolerance     1.d-4
+DM.MixingWeight  0.1
+
+WriteCoorXmol     .true.
+WriteEigenvalues .true.
+
+
+-------------------------------------------
+
+cherchez ensuite .psf : pseudopotentiel for siesta
+https://siesta-project.org/siesta/Documentation/
+
+chercher pseudo de gga.pbe selon l'exemple qu'on a 
+vous le téléchargez ou vous le génères, n'utilisez pas editeur "vi"
+
+la méthode correcte : 
+wget https://nninc.cnf.cornell.edu/psp_files/H-gga.psf -O H.psf
+    (wget → télécharge le fichier
+     URL → fichier H-gga.psf (GGA / PBE / SIESTA)
+     -O H.psf → le renomme correctement pour SIESTA)
+
+----- 
+lancement du job 
+ 
+
+vi run_siesta_h2.sl
+
+#!/bin/bash
+#SBATCH --job-name=siesta_h2
+#SBATCH --partition=defq
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=00:10:00
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.err
+
+module purge
+module use /home/a.belkziz/.local/easybuild/modules/all
+module load Siesta/5.4.1-gompi-2023a
+
+mpirun -np 1 siesta < h2.fdf > h2.out
+
+--------------------------
+
+lancer depuis un nœud : 
+
+[a.belkziz@login02 H_test]$ pwd
+/home/a.belkziz/siesta_tests/H_test
+[a.belkziz@login02 H_test]$ salloc -N 1 -n 1 -t 02:50:00 -p defq
+salloc: Pending job allocation 414865
+salloc: job 414865 queued and waiting for resources
+salloc: job 414865 has been allocated resources
+salloc: Granted job allocation 414865
+[a.belkziz@login02 H_test]$ srun --pty bash
+[a.belkziz@node24 H_test]$ [a.belkziz@login02 H_test]$ pwd
+/home/a.belkziz/siesta_tests/H_test
+
+IB /
+vi run_siesta_h2.sl
+
+#!/bin/bash
+#SBATCH --job-name=siesta_h2_ib
+#SBATCH --partition=defq
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --constraint=ib
+#SBATCH --time=00:10:00
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.err
+
+module purge
+module load slurm
+module use /home/a.belkziz/.local/easybuild/modules/all
+module load Siesta/5.4.1-gompi-2023a
+
+echo "Nodes allocated:"
+srun hostname
+
+mpirun -np 2 siesta < h2.fdf > h2_ib.out
+:::
+OPA /
+
+vi run_siesta_h2.sl
+
+#!/bin/bash
+#SBATCH --job-name=siesta_h2_ib
+#SBATCH --partition=defq
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --constraint=opa
+#SBATCH --time=00:10:00
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.err
+
+module purge
+module load slurm
+module use /home/a.belkziz/.local/easybuild/modules/all
+module load Siesta/5.4.1-gompi-2023a
+
+export OMPI_MCA_pml=ob1
+export OMPI_MCA_btl=self,tcp
+export OMPI_MCA_mtl=^ofi
+export OMP_NUM_THREADS=1
+
+echo "Nodes allocated:"
+srun hostname
+
+mpirun -np 2 siesta < h2.fdf > h2_opa.out
+
+
+
