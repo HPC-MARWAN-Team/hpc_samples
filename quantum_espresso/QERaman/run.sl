@@ -9,9 +9,8 @@
 
 #load modules
 
-module load intel2021/mpi intel2021/mkl intel2021/compiler OpenMPI/4.1.4-GCC-12.2.0 
-
-module load QERaman/intel/qe7.2
+module load  intel/2023a
+module load  QERaman/intel/1.2_qe7.5
 
 #prepare working directory 
 export WORK_DIR=/scratch/users/$USER/workdir/QERaman_${SLURM_JOB_ID}
@@ -19,7 +18,7 @@ export INPUT_DIR=$PWD/input
 [[ -z $INPUT_DIR ]] && { echo "Error: Input Directory (INPUT_DIR) is not defined "; exit 1; }
 [[ ! -d $INPUT_DIR ]] && { echo "Error:Input Directory (INPUT_DIR) does not exist "; exit 1; }
 
-export ESPRESSO_PSEUDO=/$PDW/pseudo
+export ESPRESSO_PSEUDO=$PWD/pseudo
 
 export OMP_NUM_THREADS=1
 
