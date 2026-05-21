@@ -1,0 +1,136 @@
+1. Environnements disponibles
+-------------------------------
+-------------------------------
+| Utilisation            | Commande                                                            |
+|------------------------|---------------------------------------------------------------------|
+| OpenFOAM seul          | `module load openfoam/2206`                                         |
+| preCICE seul           | `module load precice/3.1.2`                                         |
+| **OpenFOAM + preCICE** | `module load coupling/precice-openfoam`                             |
+| **FEniCS + preCICE**   | `module load coupling/precice-fenics` + `conda activate fenics-env` |
+
+2. OpenFOAM + preCICE
+------------------------
+------------------------
+### Charger l'environnement
+
+module load coupling/precice-openfoam
+
+### Configurer votre cas Dans le fichier system/controlDict, ajoutez :
+libs ("libpreciceAdapterFunctionObject.so");
+
+### Créer la configuration preCICE Fichier precice-config.xml à la racine de votre cas :
+
+<?xml version="1.0"?>
+<precice-configuration>
+  <participant name="Fluid">
+    <use-mesh name="FluidMesh" provide="yes"/>
+    <write-data name="Temperature" mesh="FluidMesh"/>
+  </participant>
+  <participant name="Solid">
+    <use-mesh name="SolidMesh" provide="yes"/>
+    <read-data name="Temperature" mesh="SolidMesh"/>
+  </participant>
+  <mapping:nearest-neighbor direction="write" from="FluidMesh" to="SolidMesh" constraint="consistent"/>
+</precice-configuration>
+
+### Lancer la simulation
+# En série
+icoFoam
+
+# En parallèle
+mpirun -np 4 icoFoam -parallel
+
+---------------------------
+3. FEniCS + preCICE
+----------------------------
+----------------------------
+### charger l'environnement 
+
+module load coupling/precice-fenics
+conda activate fenics-env
+
+### script python type : 
+
+from fenics import *
+import fenicsprecice
+
+# Initialisation
+participant = fenicsprecice.Adapter(
+    config_file="precice-config.xml",
+    participant_name="Solid",
+    mesh_name="SolidMesh"
+)
+
+# Définition du problème
+mesh = UnitSquareMesh(10, 10)
+V = FunctionSpace(mesh, 'P', 1)
+u = Function(V)
+
+# Boucle de couplage
+while participant.is_coupling_ongoing():
+    data = participant.read_data()
+    # Résoudre votre problème
+    # ...
+    participant.write_data(data)
+    participant.advance()
+
+### lancer 
+python3 mon_script.py
+
+### dasactiver l'environnement
+conda deactivate
+
+4. tutoriels 
+-------------
+-------------
+La documentation officielle propose de nombreux tutoriels pour apprendre à utiliser preCICE avec OpenFOAM et FEniCS : https://precice.org/tutorials.html
+-Allez sur https://precice.org/tutorials.html
+-Choisissez un tutoriel
+-Téléchargez ou clonez le dépôt
+-Suivez les instructions dans le README
+
+# Exemple pour cloner tous les tutoriels
+git clone https://github.com/precice/tutorials.git
+cd tutorials
+ls
+# Choisissez un tutoriel et suivez les instructions
+
+5.vérifications : 
+-----------------
+-----------------
+### OpenFOAM + preCICE :
+
+module load coupling/precice-openfoam
+echo $WM_PROJECT_VERSION      # v2206
+pkg-config --modversion libprecice  # 3.1.2
+ls $FOAM_USER_LIBBIN/libpreciceAdapterFunctionObject.so
+
+### FEniCS + preCICE :
+
+module load coupling/precice-fenics
+conda activate fenics-env
+python -c "import fenicsprecice; print(fenicsprecice.__version__)"  # 2.3.0
+conda deactivate
+
+6. FAQ
+
+❓ Où trouver des exemples ?
+👉 https://precice.org/tutorials.html
+
+❓ L'adaptateur ne se charge pas
+
+# Vérifiez que la ligne est bien dans controlDict
+cat system/controlDict | grep libs
+# Doit afficher: libs ("libpreciceAdapterFunctionObject.so");
+
+❓ Erreur MPI lors de l'import Python
+
+export OMPI_MCA_btl=self,tcp
+export OMPI_MCA_btl_vader_single_copy_mechanism=none
+
+❓ FEniCS ne trouve pas fenicsprecice
+
+# Vérifiez que vous êtes dans le bon environnement
+conda activate fenics-env
+which python  # Doit montrer .conda/envs/fenics-env/bin/python
+

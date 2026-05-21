@@ -2,7 +2,7 @@
 #!/bin/bash
 #SBATCH -J QE73
 #SBATCH --ntasks=8
-#SBATCH --ntasks-per-core=16
+#SBATCH --ntasks-per-core=1
 #SBATCH --partition=defq
 ##SBATCH --mem-per-cpu=10G   # la taille de mémoire par cpu que vous estimez nécessaire pour votre calcul.
 #SBATCH -o %x-%j.out
