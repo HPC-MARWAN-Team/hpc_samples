@@ -4,7 +4,7 @@
 #SBATCH -e %x-%j.err
 #SBATCH --partition=shortq
 
-module load GPAW/20.1.0-foss-2019b-Python-3.7.4
+module load GPAW/25.7.0-foss-2025a
 
 
 #prepare work_dir
