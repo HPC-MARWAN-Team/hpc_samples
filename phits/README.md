@@ -74,4 +74,4 @@ file = ParticleTherapy.inp
 
 puis lancer votre calcul avec slurm .
 
-un exemple de script est disponible sur https://github.com/HPC-MARWAN/hpc_samples/blob/master/phits/script.sl
+un exemple de script est disponible sur https://github.com/HPC-MARWAN-Team/hpc_samples/blob/master/phits/script.sl
